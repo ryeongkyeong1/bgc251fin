@@ -1,0 +1,100 @@
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-family: 'Oswald', sans-serif;
+}
+
+#guide {
+  position: fixed;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 30px;
+  z-index: 10;
+  display: flex;
+  gap: 3px;
+  pointer-events: none;
+}
+
+.char {
+  display: inline-block;
+  animation: wave 1.5s infinite ease-in-out;
+  color: black;
+  /* -webkit-text-stroke: 5px rgb(0, 255, 0); */
+}
+
+.char:nth-child(1) {
+  animation-delay: 0s;
+}
+.char:nth-child(2) {
+  animation-delay: 0.05s;
+}
+.char:nth-child(3) {
+  animation-delay: 0.1s;
+}
+.char:nth-child(4) {
+  animation-delay: 0.15s;
+}
+.char:nth-child(5) {
+  animation-delay: 0.2s;
+}
+/* 계속 추가... */
+
+@keyframes wave {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+canvas {
+  position: absolute;
+  top: 30px;
+  left: 30;
+  border: 0px solid rgb(255, 0, 0); /* 윤곽선 */
+  border-radius: 1px; /* 둥글게 */
+}
+
+#guide-bottom {
+  position: absolute;
+  bottom: 280px; /* 아래 여백 조절 */
+  left: 40%;
+  transform: translateX(-70%);
+  font-size: 8px;
+  font-family: 'Oswald', sans-serif;
+  display: flex;
+  gap: 3px;
+  color: transparent;
+  -webkit-text-stroke: 1px rgb(255, 0, 68);
+  white-space: nowrap;
+  /* 아래글 */
+}
+
+video {
+  border: 5px solid rgb(255, 136, 0);
+  border-radius: 12px;
+  position: absolute;
+  top: 10px;
+  left: 0;
+  z-index: 1;
+}
+
+#inputText {
+  position: fixed;
+  bottom: 210px;
+  left: 50%;
+  transform: translateX(-60%);
+  z-index: 20;
+  font-size: 13px;
+  padding: 6px 10px;
+
+  width: 140px; /* 또는 300px */
+
+  background: rgba(0, 0, 0, 0.9);
+  border: none;
+  color: rgb(255, 255, 255);
+}
